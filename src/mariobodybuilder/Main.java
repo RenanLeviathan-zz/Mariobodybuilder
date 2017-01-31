@@ -38,7 +38,11 @@ public class Main extends JFrame implements Runnable{
     public void fase1(){
         Graphics g = getGraphics();
         Graphics b = buffer.getGraphics();
-        
+        b.drawImage(fundo.getImage(), 0, 0, this);
+        platform.stream().forEach((t) -> {
+            draw(b,t);
+        });
+        g.drawImage(buffer, 0, 0, this);
     }
     
     //métodos do sistema
@@ -62,7 +66,10 @@ public class Main extends JFrame implements Runnable{
         buffer = new BufferedImage(LARGURA, ALTURA, BufferedImage.TYPE_INT_RGB);
         //mario = new Sprite();
         platform = new ArrayList<>();
-        fundo = new ImageIcon("res/");
+        platform.stream().forEach((t) -> {
+            
+        });
+        fundo = new ImageIcon("res/background.png");
     }
     
     public void update(){
