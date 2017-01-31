@@ -12,6 +12,7 @@ import objects.Sprite;
 import objects.Tile;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import xml.XMLParser;
 
 /**
  *
