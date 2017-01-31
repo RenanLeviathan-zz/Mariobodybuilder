@@ -8,4 +8,7 @@ and open the template in the editor.
 
 <tiles>
     <tile x="0" y="468" width="32" height="32" f_x="0" f_y="0" src="res/spritesheet.png"/>
+    <tile x="32" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="64" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="96" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
 </tiles>

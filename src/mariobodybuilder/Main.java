@@ -77,6 +77,13 @@ public class Main extends JFrame implements Runnable{
             Element e = (Element) tiles.item(i);
             int x = Integer.parseInt(e.getAttribute("x"));
             int y = Integer.parseInt(e.getAttribute("y"));
+            int width = Integer.parseInt(e.getAttribute("width"));
+            int height = Integer.parseInt(e.getAttribute("height"));
+            int f_x = Integer.parseInt(e.getAttribute("f_x"));
+            int f_y = Integer.parseInt(e.getAttribute("f_y"));
+            String src = e.getAttribute("src");
+            Tile tl = new Tile(x, y, width, height, f_x, f_y, new ImageIcon(src));
+            platform.add(tl);
         }
         fundo = new ImageIcon("res/background.png");
     }
