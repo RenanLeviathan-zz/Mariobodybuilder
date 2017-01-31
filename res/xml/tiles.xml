@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<tiles>
+    <tile x="0" y="468" width="32" height="32" f_x="0" f_y="0" src="res/spritesheet.png"/>
+</tiles>

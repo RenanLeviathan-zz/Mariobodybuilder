@@ -7,11 +7,15 @@ package mariobodybuilder;
 
 import java.awt.Graphics;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import javax.swing.JFrame;
 import objects.Sprite;
 import objects.Tile;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.NodeList;
 import xml.XMLParser;
 
 /**
@@ -67,9 +71,13 @@ public class Main extends JFrame implements Runnable{
         buffer = new BufferedImage(LARGURA, ALTURA, BufferedImage.TYPE_INT_RGB);
         //mario = new Sprite();
         platform = new ArrayList<>();
-        platform.stream().forEach((t) -> {
-            
-        });
+        Document doc = XMLParser.parseFile(new File("res/xml/tiles.xml"));
+        NodeList tiles = doc.getElementsByTagName("tile");
+        for(int i=0;i<tiles.getLength();i++){
+            Element e = (Element) tiles.item(i);
+            int x = Integer.parseInt(e.getAttribute("x"));
+            int y = Integer.parseInt(e.getAttribute("y"));
+        }
         fundo = new ImageIcon("res/background.png");
     }
     
