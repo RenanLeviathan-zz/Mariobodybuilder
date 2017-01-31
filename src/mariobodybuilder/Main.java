@@ -33,9 +33,10 @@ public class Main extends JFrame implements Runnable {
     private static final int LARGURA = 500, ALTURA = 500;
     private static final int FPS = 30;
     private int bg_scroll = 0;
-    private boolean onPlat = true;
+    private boolean onPlat = true,moving=false;
     private BufferedImage buffer;
-    private int x = 0, y, xspeed = 0, yspeed = 0, vel = 2;
+    private int GRAVITY = 3;
+    private int x = 0, y, xspeed = 2, yspeed = 2, vel = 0;
     private ImageIcon fundo;
 
     public Main() {
@@ -107,27 +108,29 @@ public class Main extends JFrame implements Runnable {
     }
 
     public void update() {
-        if (mario.getY() < 468 && !colidiu(mario, floor)) {
-            y += yspeed;
-            mario.move(x, y);
-        }
-        if (KeyEvents.up_actived()) {
-            yspeed = (int) Math.sqrt(Math.pow(vel, 2) + 1.0 * y);
-            y -= yspeed;
-            mario.move(x, y);
-            onPlat = false;
+        if(KeyEvents.up_actived()&&colidiu(mario,floor)){
+            y-=yspeed;
+            moving=true;
         }
         if (KeyEvents.right_actived()) {
-            xspeed = (int) Math.sqrt(Math.pow(vel, 2) + 1.0 * x);
-            x += xspeed;
-            mario.move(x, y);
+            vel=1;
+            moving=true;
         }
-        if (KeyEvents.left_actived() && mario.getX() > 0) {
-            x -= xspeed;
+        if(KeyEvents.left_actived()){
+            vel=-1;
+            moving=true;
+        }
+        if(!KeyEvents.left_actived()&&!KeyEvents.right_actived()){
+            vel=0;
+            moving=false;
+        }
+        if(moving){
+            xspeed=vel*10;
+            x+=xspeed;
             mario.move(x, y);
-            if (mario.getX() > 250) {
-                bg_scroll -= 10;
-            }
+            mario.animar(64);
+        }else{
+            mario.parar();
         }
     }
 
