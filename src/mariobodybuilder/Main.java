@@ -44,6 +44,7 @@ public class Main extends JFrame implements Runnable{
         Graphics g = getGraphics();
         Graphics b = buffer.getGraphics();
         b.drawImage(fundo.getImage(), 0, 0, this);
+        draw(b,mario);
         platform.stream().forEach((t) -> {
             draw(b,t);
         });
@@ -69,7 +70,7 @@ public class Main extends JFrame implements Runnable{
     
     public void load(){
         buffer = new BufferedImage(LARGURA, ALTURA, BufferedImage.TYPE_INT_RGB);
-        //mario = new Sprite();
+        mario = new Sprite(30,404,32,64,0,0,new ImageIcon("res/mariobuilder1.png"));
         platform = new ArrayList<>();
         Document doc = XMLParser.parseFile(new File("res/xml/tiles.xml"));
         NodeList tiles = doc.getElementsByTagName("tile");
