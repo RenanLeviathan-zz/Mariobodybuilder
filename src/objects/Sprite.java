@@ -56,6 +56,18 @@ public class Sprite {
         this.fy=fy;
     }
     
+    public void animar(int f_max){
+        if(fx<f_max){
+            fx+=width;
+        }else{
+            fx=0;
+        }
+    }
+    
+    public void parar(){
+        fx=0;
+    }
+    
     public int getFx(){
         return this.fx;
     }

@@ -15,4 +15,6 @@ and open the template in the editor.
     <tile x="160" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="192" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="224" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="256" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="288" y="468" width="32" height="32" f_x="64" f_y="0" src="res/spritesheet.png"/>
 </tiles>
