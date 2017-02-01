@@ -30,7 +30,7 @@ public class Main extends JFrame implements Runnable {
     private ArrayList<Tile> platform;
     private int stage;
     private CBox floor;
-    private static final int LARGURA = 500, ALTURA = 500;
+    private static final int LARGURA = 500, ALTURA = 448;
     private static final int FPS = 30;
     private int bg_scroll = 0;
     private boolean onPlat = true,moving=false;
