@@ -17,10 +17,11 @@ public class KeyEvents implements KeyListener {
     private static boolean up = false;
     private static boolean right = false;
     private static boolean left = false;
+    private static boolean space=false;
 
     @Override
     public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     @Override
@@ -34,6 +35,9 @@ public class KeyEvents implements KeyListener {
                 break;
             case KeyEvent.VK_LEFT:
                 left = true;
+                break;
+            case KeyEvent.VK_SPACE:
+                space=true;
                 break;
         }
     }
@@ -50,6 +54,9 @@ public class KeyEvents implements KeyListener {
             case KeyEvent.VK_LEFT:
                 left = false;
                 break;
+            case KeyEvent.VK_SPACE:
+                space=false;
+                break;
         }
     }
 
@@ -63,5 +70,9 @@ public class KeyEvents implements KeyListener {
 
     public static boolean left_actived() {
         return left;
+    }
+    
+    public static boolean space_actived(){
+        return space;
     }
 }

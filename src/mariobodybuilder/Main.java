@@ -108,10 +108,6 @@ public class Main extends JFrame implements Runnable {
     }
 
     public void update() {
-        if(KeyEvents.up_actived()&&colidiu(mario,floor)){
-            y-=yspeed;
-            moving=true;
-        }
         if (KeyEvents.right_actived()) {
             vel=1;
             if(mario.getX()>250){
