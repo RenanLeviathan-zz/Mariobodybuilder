@@ -26,9 +26,12 @@ and open the template in the editor.
     <tile x="576" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="608" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="640" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="640" y="436" width="32" height="32" f_x="32" f_y="32" src="res/spritesheet.png"/>
     <tile x="672" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="704" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="736" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="768" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
     <tile x="800" y="468" width="32" height="32" f_x="32" f_y="0" src="res/spritesheet.png"/>
+    <tile x="832" y="468" width="32" height="32" f_x="64" f_y="0" src="res/spritesheet.png"/>
+    <tile x="896" y="468" width="32" height="32" f_x="0" f_y="0" src="res/spritesheet.png"/>
 </tiles>

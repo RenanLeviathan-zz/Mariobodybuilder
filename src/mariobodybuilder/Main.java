@@ -51,7 +51,7 @@ public class Main extends JFrame implements Runnable {
     public void fase1() {
         Graphics g = getGraphics();
         Graphics b = buffer.getGraphics();
-        b.drawImage(fundo.getImage(), 0, 0, this);
+        b.drawImage(fundo.getImage(), bg_scroll-2, 0, this);
         draw(b, mario);
         platform.stream().forEach((t) -> {
             draw(b, t, bg_scroll);
@@ -72,8 +72,8 @@ public class Main extends JFrame implements Runnable {
 
     public void draw(Graphics g, Tile t, int bg_scroll) {
         g.drawImage(t.getSrc(), t.getX() + bg_scroll, t.getY(), t.getX() + t.getWidth() + bg_scroll,
-                t.getY() + t.getHeight(), t.getFrameX() + bg_scroll, t.getFrameY(),
-                t.getFrameX() + t.getWidth() + bg_scroll, t.getFrameY() + t.getHeight(), this);
+                t.getY() + t.getHeight(), t.getFrameX(), t.getFrameY(),
+                t.getFrameX() + t.getWidth(), t.getFrameY() + t.getHeight(), this);
     }
 
     public void load() {
@@ -86,14 +86,14 @@ public class Main extends JFrame implements Runnable {
         floor = new CBox(0, 468, 320, 32);
         for (int i = 0; i < tiles.getLength(); i++) {
             Element e = (Element) tiles.item(i);
-            int x = Integer.parseInt(e.getAttribute("x"));
-            int y = Integer.parseInt(e.getAttribute("y"));
+            int X = Integer.parseInt(e.getAttribute("x"));
+            int Y = Integer.parseInt(e.getAttribute("y"));
             int width = Integer.parseInt(e.getAttribute("width"));
             int height = Integer.parseInt(e.getAttribute("height"));
             int f_x = Integer.parseInt(e.getAttribute("f_x"));
             int f_y = Integer.parseInt(e.getAttribute("f_y"));
             String src = e.getAttribute("src");
-            Tile tl = new Tile(x, y, width, height, f_x, f_y, new ImageIcon(src));
+            Tile tl = new Tile(X, Y, width, height, f_x, f_y, new ImageIcon(src));
             platform.add(tl);
         }
         fundo = new ImageIcon("res/background.png");
@@ -114,6 +114,9 @@ public class Main extends JFrame implements Runnable {
         }
         if (KeyEvents.right_actived()) {
             vel=1;
+            if(mario.getX()>250){
+                bg_scroll-=5;
+            }
             moving=true;
         }
         if(KeyEvents.left_actived()){
@@ -125,7 +128,7 @@ public class Main extends JFrame implements Runnable {
             moving=false;
         }
         if(moving){
-            xspeed=vel*10;
+            xspeed=vel*5;
             x+=xspeed;
             mario.move(x, y);
             mario.animar(64);
