@@ -41,7 +41,7 @@ public class Main extends JFrame implements Runnable{
         
     }
     
-    //mÃ©todos do sistema
+    //métodos do sistema
     public void render(){
         fase1();
     }
